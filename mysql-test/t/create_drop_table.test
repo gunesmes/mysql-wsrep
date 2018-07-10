@@ -3,6 +3,9 @@
 # https://sourceforge.net/projects/utmysql/?source=typ_redirect
 # http://utmysql.sourceforge.net/
 
+# run test
+# mysqltest --test-file=mysql-test/t/add_drop_table.test mysql -u root -p
+
 
 # InnoDB page size 16k is required
 #
