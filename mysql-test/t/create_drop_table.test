@@ -1,3 +1,9 @@
+# install utMySQL
+# mysql mysql -u root -p < src/utMySQL_pkg_TestSuite.sql
+# https://sourceforge.net/projects/utmysql/?source=typ_redirect
+# http://utmysql.sourceforge.net/
+
+
 # InnoDB page size 16k is required
 
 #
