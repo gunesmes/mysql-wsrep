@@ -1,0 +1,34 @@
+# InnoDB page size 16k is required
+
+#
+# Test of alter table
+#
+DECLARE result int;
+
+--disable_warnings
+drop table if exists t1;
+drop database if exists mysqltest;
+--enable_warnings
+
+SET sql_mode = 'NO_ENGINE_SUBSTITUTION';
+
+SET SESSION information_schema_stats_expiry=0;
+
+create table t1 (
+col1 int not null auto_increment primary key,
+col2 varchar(30) not null);
+
+--echo # At some point the below test case failed on assertion.
+#EXEC tSQLt.assertEquals 0 =  (SELECT count(*) FROM t1);
+
+SET result = (SELECT count(*) FROM t1));
+
+
+insert into t1 values (2,7);
+
+--echo # At some point the below test case failed on assertion.
+#check (1 = (SELECT count(*) FROM `t1`));
+
+
+alter table t1;
+drop table t1;
